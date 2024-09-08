@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import Input from "./_Components/input/page";
+import Current from "./_Components/current/page";
+import Forcast from "./_Components/forcast/page";
+import Weather from "./_Components/weather.tsx/page";
 
 const Home = () => {
-  const [data, setData] = useState<any>({});
+  const [data, setData] = useState<any>([]);
   const [location, setLocation] = useState<any>("");
-  const [error, setError] = useState<any>({});
+  const [error, setError] = useState<any>("");
   let apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
   let url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${location}&days=7&aqi=yes&alerts=yes
@@ -31,14 +34,14 @@ const Home = () => {
       setError("");
     } catch (error) {
       setError("city not found");
-      setData({});
+      setData([]);
     }
   };
   console.log(location);
   return (
     <>
-      <div className=" bg-cover bg-gradient-to-r from-blue-500 to-blue-300 h-screen  ">
-        <div className=" bg-white/25 w-full h-full flex flex-col ">
+      <div className=" bg-cover bg-gradient-to-r from-blue-500 to-blue-300 min-h-screen  ">
+        <div className=" bg-white/25 w-full min-h-screen flex flex-col ">
           {/* input and logos */}
           <div className=" flex flex-col md:flex-row justify-between items-center p-12">
             <Input setLocation={setLocation} handelSearch={handelSearch} />
@@ -46,7 +49,21 @@ const Home = () => {
               Weather App.
             </h1>
           </div>
-          {data?.current?.temp_f}
+          {data && !error && location !== "" ? (
+            <div>
+              <div className=" flex md:flex-row flex-col p-12 items-center justify-between ">
+                <Current data={data} />
+                <Forcast data={data} />
+              </div>
+              <div>
+                <Weather data={data} />
+              </div>
+            </div>
+          ) : location !== "" ? (
+            <div>{error}</div>
+          ) : (
+            <div>Welcome to Weather App</div>
+          )}
         </div>
       </div>
     </>
