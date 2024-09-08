@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-onfig = {
+config = {
   Image: {
     domains: ["cdn.weatherapi.com"],
   },
