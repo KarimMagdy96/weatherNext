@@ -5,6 +5,8 @@ import Input from "./_Components/input/page";
 import Current from "./_Components/current/page";
 import Forcast from "./_Components/forcast/page";
 import Weather from "./_Components/weather.tsx/page";
+import { MdDangerous } from "react-icons/md";
+
 interface WeatherData {
   location?: {
     name?: string;
@@ -122,7 +124,7 @@ const Home = () => {
       // setLocation("");
       setError("");
     } catch (error) {
-      setError("city not found");
+      setError("City Not Found");
       setData(null);
     }
   };
@@ -153,7 +155,10 @@ const Home = () => {
               </div>
             ))
           ) : location !== "" ? (
-            <div>{error}</div>
+            <div className="  pt-32 justify-center items-center  text-3xl md:text-4xl flex  flex-col   font-bold">
+              <MdDangerous fontSize={90} />
+              {error}
+            </div>
           ) : (
             <div className="pt-32 text-center text-3xl md:text-4xl   text-white  font-bold">
               Welcome to Weather App.
