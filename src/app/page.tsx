@@ -63,7 +63,7 @@ const Home = () => {
             <div>{error}</div>
           ) : (
             <div className="pt-32 text-center text-4xl   text-white  font-bold">
-              Welcome to Weather App
+              Welcome to Weather App.
             </div>
           )}
         </div>
