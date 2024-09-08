@@ -1,10 +1,21 @@
 import React from "react";
 
+interface day {
+  date: string;
+  day: {
+    maxtemp_f: number;
+    mintemp_f: number;
+    condition: {
+      icon: string;
+      text: string;
+    };
+  };
+}
 const Forcast = ({ data }: any) => {
   return (
     <>
       <div className=" grid grid-cols-2 md:grid-cols-3  lg:grid-cols-7 gap-8 text-xs sm:text-sm lg:text-base w-full ">
-        {data?.forecast?.forecastday?.map((day: any, i: any) => {
+        {data?.forecast?.forecastday?.map((day: day, i: any) => {
           return (
             <div
               key={i}

@@ -7,15 +7,15 @@ import Forcast from "./_Components/forcast/page";
 import Weather from "./_Components/weather.tsx/page";
 
 const Home = () => {
-  const [data, setData] = useState<any>([]);
-  const [location, setLocation] = useState<any>("");
-  const [error, setError] = useState<any>("");
-  let apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const [data, setData] = useState([]);
+  const [location, setLocation] = useState("");
+  const [error, setError] = useState("");
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
-  let url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${location}&days=7&aqi=yes&alerts=yes
+  const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${location}&days=7&aqi=yes&alerts=yes
 `;
 
-  const handelSearch = async (e: any) => {
+  const handelSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
       console.log(url);
