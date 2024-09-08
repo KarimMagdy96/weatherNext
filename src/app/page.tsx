@@ -10,7 +10,9 @@ const Home = () => {
           {/* input and logos */}
           <div className=" flex flex-col md:flex-row justify-between items-center p-12">
             <Input />
-            <h1>Weather App.</h1>
+            <h1 className=" mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl">
+              Weather App.
+            </h1>
           </div>
         </div>
       </div>
