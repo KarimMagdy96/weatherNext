@@ -1,6 +1,7 @@
 import { getCurrentData } from "@/app/utils/currentDate";
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
+import Image from "next/image";
 interface currentPropss {
   data: {
     location: {
@@ -17,7 +18,7 @@ interface currentPropss {
   };
 }
 const Current = ({ data }: currentPropss) => {
-  let CurrentData = getCurrentData();
+  const CurrentData = getCurrentData();
   return (
     <div className="flex flex-col mb-8 md:mb-0 items-start gap-2 w-1/2">
       <div className="flex items-center">
@@ -25,8 +26,10 @@ const Current = ({ data }: currentPropss) => {
           <h1 className=" text-3xl text-white">Today</h1>
           <p className=" text-white">{CurrentData}</p>
           <div>
-            <img
+            <Image
               className="w-[50px] object-cover"
+              width={50}
+              height={50}
               src={data?.current?.condition?.icon}
               alt={data?.current?.condition?.text}
             />
