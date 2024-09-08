@@ -101,7 +101,7 @@ const Home = () => {
   const [error, setError] = useState("");
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${location}&days=7&aqi=yes&alerts=yes
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${location}&days=7&aqi=yes&alerts=yes
 `;
 
   const handelSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
