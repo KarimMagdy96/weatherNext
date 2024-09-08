@@ -138,21 +138,7 @@ const Home = () => {
               WEATHER APP.
             </h1>
           </div>
-          {data ? (
-            <>
-              <div>
-                <div className=" flex md:flex-row flex-col p-12 items-center justify-between ">
-                  <Current data={data} />
-                  <Forcast data={data} />
-                </div>
-                <div>
-                  <Weather data={data} />
-                </div>
-              </div>
-            </>
-          ) : (
-            ""
-          )}
+
           {data && !error && location !== "" ? (
             <div>
               <div className=" flex md:flex-row flex-col p-12 items-center justify-between ">
