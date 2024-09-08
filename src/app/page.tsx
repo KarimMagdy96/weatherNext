@@ -126,7 +126,7 @@ const Home = () => {
       setData(null);
     }
   };
-  console.log(location);
+
   return (
     <>
       <div className=" bg-cover bg-gradient-to-r from-blue-500 to-blue-300 min-h-screen  ">
@@ -140,15 +140,18 @@ const Home = () => {
           </div>
 
           {data && !error && location !== "" ? (
-            <div>
-              <div className=" flex md:flex-row flex-col p-12 items-center justify-between ">
-                <Current data={data} />
-                <Forcast data={data} />
-              </div>
+            (console.log(data),
+            (
               <div>
-                <Weather data={data} />
+                <div className=" flex md:flex-row flex-col p-12 items-center justify-between ">
+                  <Current data={data} />
+                  <Forcast data={data} />
+                </div>
+                <div>
+                  <Weather data={data} />
+                </div>
               </div>
-            </div>
+            ))
           ) : location !== "" ? (
             <div>{error}</div>
           ) : (
