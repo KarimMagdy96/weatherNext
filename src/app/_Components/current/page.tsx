@@ -2,7 +2,19 @@ import { getCurrentData } from "@/app/utils/currentDate";
 import React from "react";
 import { FaLocationDot } from "react-icons/fa6";
 interface currentPropss {
-  data: object | any;
+  data: {
+    location: {
+      name: string;
+      region: string;
+    };
+    current: {
+      temp_f: number;
+      condition: {
+        icon: string;
+        text: string;
+      };
+    };
+  };
 }
 const Current = ({ data }: currentPropss) => {
   let CurrentData = getCurrentData();
