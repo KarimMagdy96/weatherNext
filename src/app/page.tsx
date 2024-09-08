@@ -62,7 +62,7 @@ const Home = () => {
           ) : location !== "" ? (
             <div>{error}</div>
           ) : (
-            <div>Welcome to Weather App</div>
+            <div className=" pt-50 text-center text-4xl   text-white  font-bold">Welcome to Weather App</div>
           )}
         </div>
       </div>
