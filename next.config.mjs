@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-
-config = {
+const nextConfig = {
   Image: {
     domains: ["cdn.weatherapi.com"],
   },
