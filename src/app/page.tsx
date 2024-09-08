@@ -45,8 +45,8 @@ const Home = () => {
           {/* input and logos */}
           <div className=" flex flex-col md:flex-row justify-between items-center p-12">
             <Input setLocation={setLocation} handelSearch={handelSearch} />
-            <h1 className=" mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl">
-              Weather App.
+            <h1 className=" font-semibold mb-8 md:mb-0 order-1 text-white py-2 px-4 rounded-xl">
+              WEATHER APP.
             </h1>
           </div>
           {data && !error && location !== "" ? (
@@ -62,7 +62,9 @@ const Home = () => {
           ) : location !== "" ? (
             <div>{error}</div>
           ) : (
-            <div className=" pt-50 text-center text-4xl   text-white  font-bold">Welcome to Weather App</div>
+            <div className="pt-32 text-center text-4xl   text-white  font-bold">
+              Welcome to Weather App
+            </div>
           )}
         </div>
       </div>
