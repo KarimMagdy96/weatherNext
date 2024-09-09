@@ -149,7 +149,7 @@ const Home = () => {
                 </div>
               </div>
             ))
-          ) : location !== "" ? (
+          ) : location !== "" && error ? (
             <div className="  pt-32 justify-center items-center  text-3xl md:text-4xl flex  flex-col   font-bold">
               <MdDangerous fontSize={90} />
               {error}
