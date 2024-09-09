@@ -99,7 +99,9 @@ const Forcast = ({ data }: WeatherData) => {
           return (
             <div
               key={i}
-              className=" bg-white/40 p-2 text-center rounded-lg flex flex-col items-center"
+              className={` bg-white/40 p-2  text-center rounded-lg flex flex-col items-center ${
+                i == 2 ? "col-span-2 md:col-span-1" : ""
+              }  `}
             >
               <div>
                 {day.date
