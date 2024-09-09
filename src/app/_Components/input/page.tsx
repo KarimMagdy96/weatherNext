@@ -1,14 +1,21 @@
 "use client";
-import React, { MouseEventHandler } from "react";
+
 import { BsSearch } from "react-icons/bs";
 interface InputProps {
-  handelSearch: MouseEventHandler<HTMLDivElement>;
+  handelSearch: () => void;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
 }
 const Input = ({ handelSearch, setLocation }: InputProps) => {
+  const handelsumbit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handelSearch();
+  };
   return (
     <>
-      <form className=" flex items-center md:w-2/4 w-full order-2 md:order-1">
+      <form
+        onSubmit={handelsumbit}
+        className=" flex items-center md:w-2/4 w-full order-2 md:order-1"
+      >
         <input
           onChange={(e) => setLocation(e.target.value)}
           className=" w-full bg-transparent border-b-2 placeholder-white outline-none text-white "
