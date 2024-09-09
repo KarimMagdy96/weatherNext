@@ -1,6 +1,6 @@
 "use client";
 
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import Input from "./_Components/input/page";
 import Current from "./_Components/current/page";
 import Forcast from "./_Components/forcast/page";
