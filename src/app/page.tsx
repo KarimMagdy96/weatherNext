@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import Input from "./_Components/input/page";
 import Current from "./_Components/current/page";
 import Forcast from "./_Components/forcast/page";
@@ -106,12 +106,7 @@ const Home = () => {
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}=${location}&days=7&aqi=yes&alerts=yes
 `;
 
-  const handelSearch = async (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      console.log(url);
-    }
-
+  const handelSearch = async () => {
     try {
       const response = await fetch(url);
       if (!response.ok) {
